@@ -11,11 +11,11 @@ datasource db {
 }
 
 model Event {
-  id String @id @default(uuid())
-  title String
+  id          String   @id @default(uuid())
+  title       String
   description String
-  organizer String
-  finished Boolean
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  organizer   String
+  finished    Boolean
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
