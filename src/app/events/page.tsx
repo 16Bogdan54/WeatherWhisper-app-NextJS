@@ -1,4 +1,5 @@
 import { prisma } from "@/db";
+import Link from "next/link";
 
 export default async function Events() {
   // const testData = {
@@ -14,7 +15,10 @@ export default async function Events() {
 
   return (
     <>
-      <h1>Events</h1>
+      <h1 className="mb-2">Events</h1>
+      <Link className="border px-4 py-2 border-cyan-50" href="/events/addEvent">
+        Add new event
+      </Link>
       <ul>
         {events.map((event, index) => (
           <li key={index} className="m-4 p-4">
