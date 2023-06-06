@@ -2,17 +2,18 @@
 
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Button, Label, Textarea, TextInput } from "flowbite-react";
+import { prisma } from "@/db";
+import { redirect } from "next/navigation";
+import { onSubmit } from "@/app/events/addEvent/submit";
 
-interface EventFormInput {
-  title: String;
-  author: String;
-  description: String;
+export interface EventFormInput {
+  title: string;
+  description: string;
+  organizer: string;
 }
 
-export default async function AddEventPage() {
+export default function AddEventPage() {
   const { register, handleSubmit } = useForm<EventFormInput>();
-  const onSubmit: SubmitHandler<EventFormInput> = (data) =>
-    console.log("event", data);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -30,14 +31,14 @@ export default async function AddEventPage() {
       </div>
       <div>
         <div className="mb-2 block">
-          <Label className="text-white" htmlFor="author" value="Author" />
+          <Label className="text-white" htmlFor="author" value="Organizer" />
         </div>
         <TextInput
-          {...register("author")}
-          id="author"
+          {...register("organizer")}
+          id="organizer"
           sizing="md"
           type="text"
-          placeholder="Author"
+          placeholder="Organizer"
         />
       </div>
       <div className="max-w-md mb-4" id="textarea">
