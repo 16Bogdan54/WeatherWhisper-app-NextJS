@@ -1,9 +1,7 @@
 "use client";
 
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Button, Label, Textarea, TextInput } from "flowbite-react";
-import { prisma } from "@/db";
-import { redirect } from "next/navigation";
 import { onSubmit } from "@/app/events/addEvent/submit";
 
 export interface EventFormInput {
@@ -15,8 +13,10 @@ export interface EventFormInput {
 export default function AddEventPage() {
   const { register, handleSubmit } = useForm<EventFormInput>();
 
+  console.log(handleSubmit(onSubmit));
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form action={handleSubmit(onSubmit)}>
       <div>
         <div className="mb-2 block">
           <Label className="text-white" htmlFor="title" value="Title" />
