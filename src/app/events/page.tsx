@@ -2,14 +2,14 @@ import { prisma } from "@/db";
 import Link from "next/link";
 
 export default async function Events() {
-  // const testData = {
-  //   title: "test",
-  //   description: "test description",
-  //   organizer: "Bohdan Testovich",
-  //   finished: false,
-  // };
-  //
-  // await prisma.event.create({ data: testData });
+  const testData = {
+    title: "test",
+    description: "test description",
+    organizer: "Bohdan Testovich",
+    finished: false,
+  };
+
+  await prisma.event.create({ data: testData });
 
   const events = await prisma.event.findMany();
 
