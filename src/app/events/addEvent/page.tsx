@@ -13,8 +13,6 @@ export interface EventFormInput {
 export default function AddEventPage() {
   const { register, handleSubmit } = useForm<EventFormInput>();
 
-  console.log(handleSubmit(onSubmit));
-
   return (
     <form action={handleSubmit(onSubmit)}>
       <div>
