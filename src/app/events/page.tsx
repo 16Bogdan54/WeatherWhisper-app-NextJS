@@ -1,5 +1,8 @@
+"use client"
+
 import { prisma } from "@/db";
 import Link from "next/link";
+import {updateEventStatus} from "@/app/events/handler";
 
 export default async function Events() {
   const testData = {
@@ -8,6 +11,7 @@ export default async function Events() {
     organizer: "Bohdan Testovich",
     finished: false,
   };
+
 
   // await prisma.event.create({ data: testData });
 
@@ -22,7 +26,8 @@ export default async function Events() {
       <ul className="flex flex-wrap gap-5">
         {events.map((event, index) => (
           <li key={index} className="m-4 p-4 bg-cyan-600 text-cyan-200 min-w-[200px]">
-            <h3>{event.title}</h3>
+              <input type="checkbox" id={event.id} defaultChecked={event.finished} onChange={e => updateEventStatus(event.id, e.target.checked)}/>
+              <label htmlFor={event.id}>{event.title}</label>
             <h4>{event.organizer}</h4>
             <p>{event.description}</p>
             <span>{event.finished}</span>
