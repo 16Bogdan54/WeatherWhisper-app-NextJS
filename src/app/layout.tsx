@@ -21,6 +21,7 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="flex-grow container mx-auto">{children}</main>
+
         <footer className="flex justify-center items-center p-5 bg-cyan-700 text-cyan-200">
           <h1>Event Genie all rights reserved</h1>
         </footer>

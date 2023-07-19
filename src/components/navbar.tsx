@@ -10,18 +10,12 @@ export default function Navbar() {
         <li>
           <Link
             className="p-3 hover:bg-cyan-800 focus:bg-cyan-800"
-            href="/about"
+            href="/users"
           >
-            About
+            Users
           </Link>
         </li>
         <li>
-          <Link
-            className="p-3 hover:bg-cyan-800 focus:bg-cyan-800"
-            href="/events"
-          >
-            Events
-          </Link>
         </li>
       </ul>
     </nav>
