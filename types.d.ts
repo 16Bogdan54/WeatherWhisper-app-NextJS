@@ -1,4 +1,4 @@
-export interface Pokedex {
+type User = {
     id:                      number;
     uid:                     string;
     password:                string;
@@ -17,7 +17,7 @@ export interface Pokedex {
     subscription:            Subscription;
 }
 
-export interface Address {
+type Address = {
     city:           string;
     street_name:    string;
     street_address: string;
@@ -27,21 +27,21 @@ export interface Address {
     coordinates:    Coordinates;
 }
 
-export interface Coordinates {
+type Coordinates = {
     lat: number;
     lng: number;
 }
 
-export interface CreditCard {
+type CreditCard = {
     cc_number: string;
 }
 
-export interface Employment {
+type Employment = {
     title:     string;
     key_skill: string;
 }
 
-export interface Subscription {
+type Subscription = {
     plan:           string;
     status:         string;
     payment_method: string;

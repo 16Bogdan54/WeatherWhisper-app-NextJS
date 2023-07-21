@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center p-6">
+    <nav className="flex justify-between items-center p-6 bg-slate-800">
       <Link href="/">
         <h1 className="text-2xl font-bold">Event Genie</h1>
       </Link>
