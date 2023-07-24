@@ -1,49 +1,30 @@
+type Post = {
+    "userId": number,
+    "id": number,
+    "title": string,
+    "body": string,
+}
+
 type User = {
-    id:                      number;
-    uid:                     string;
-    password:                string;
-    first_name:              string;
-    last_name:               string;
-    username:                string;
-    email:                   string;
-    avatar:                  string;
-    gender:                  string;
-    phone_number:            string;
-    social_insurance_number: string;
-    date_of_birth:           Date;
-    employment:              Employment;
-    address:                 Address;
-    credit_card:             CreditCard;
-    subscription:            Subscription;
-}
-
-type Address = {
-    city:           string;
-    street_name:    string;
-    street_address: string;
-    zip_code:       string;
-    state:          string;
-    country:        string;
-    coordinates:    Coordinates;
-}
-
-type Coordinates = {
-    lat: number;
-    lng: number;
-}
-
-type CreditCard = {
-    cc_number: string;
-}
-
-type Employment = {
-    title:     string;
-    key_skill: string;
-}
-
-type Subscription = {
-    plan:           string;
-    status:         string;
-    payment_method: string;
-    term:           string;
+    "id": number,
+    "name": string,
+    "username": string,
+    "email": string,
+    "address": {
+        "street": string,
+        "suite": string,
+        "city": string,
+        "zipcode": string,
+        "geo": {
+            "lat": string,
+            "lng": string
+        }
+    },
+    "phone": string,
+    "website": string,
+    "company": {
+        "name": string,
+        "catchPhrase": string,
+        "bs": string
+    }
 }

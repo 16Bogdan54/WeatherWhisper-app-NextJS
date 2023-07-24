@@ -1,5 +1,5 @@
 import React from 'react';
-import {getUsers} from "@/lib/getUsers";
+import {getAllUsers} from "@/lib/getAllUsers";
 import Link from 'next/link'
 import {Card, CardHeader, CardContent, CardTitle, CardDescription} from '@/components/ui/card'
 import {Avatar, AvatarFallback, AvatarImage,} from "@/components/ui/avatar"
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 }
 
 const Users = async () => {
-    const users :User[] = await getUsers(8)
+    const users :User[] = await getAllUsers()
 
     return (
         <section className="container flex flex-wrap gap-10 items-center justify-center p-10">
