@@ -1,7 +1,11 @@
 .logo {
-    @apply text-2xl transition ease-in-out delay-500
+    @apply text-2xl
 }
 
 .text_hidden {
     @apply hidden
+}
+
+.dynamic_text {
+    @apply transition ease-in-out delay-150 duration-300
 }
