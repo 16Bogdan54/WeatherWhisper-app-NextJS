@@ -7,5 +7,5 @@ export const getLocation = async (location: string) => {
     { params: { name: location } }
   );
 
-  return res.data;
+  return res.data.results.pop();
 };

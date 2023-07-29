@@ -1,11 +1,14 @@
 "use client";
+
 import React from "react";
-import { Dropdown, Navbar } from "flowbite-react";
+import { Navbar } from "flowbite-react";
 import Logo from "@/components/logo/Logo";
+
+import style from "./Navbar.module.css";
 
 const Navigation = () => {
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid rounded className={style.navbar}>
       <Logo />
     </Navbar>
   );
